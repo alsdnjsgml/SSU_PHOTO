@@ -70,4 +70,4 @@ if __name__ == "__main__":
     # 참고 1) 파일 저장 위치 (FLASK 문법)
     #      ㄴ templates -html / static : image, css, js
     #     2) 홈페이지는 상단에 동그라미 아이콘 클릭시 시작 : 여러명이 실행 시키면 구동 발생 참고
-    #     3) input size = 400 x 400 이하, 풍경 사진 추천(차이가 확명하게 보임)   
+    #     3) input size = 400 x 400 이하, 풍경 사진 추천(차이가 확명하게 보임)   test 
