@@ -34,7 +34,7 @@ def gallery():
 def upload_file():
       # 구름ide에서 실행 불가. cpu 터짐
       # a = str(np.random.randint(1,100))
-      # content = request.files['file']
+      # content = request.files['file1']
       # style = request.form.get('style')
       # content.save(os.path.join(UPLOAD_FOLDER+ '/'+a+'content.jpg'))
 
@@ -44,13 +44,14 @@ def upload_file():
       # vgg = style_transfer.model()
 
       # # #Resize style to match content, makes code easier
-      # style = style_transfer.load_image('/content/Museum_Neural_Art/static/image/s'+ style+'.jpg', shape=content.shape[-2:])
+      # style = style_transfer.load_image(UPLOAD_FOLDER+'/s'+ str(style)+'.jpg', shape=content.shape[-2:])
+      
       # target = style_transfer.stylize(content,style,vgg)
       # x = style_transfer.im_convert(target)
-      # plt.imsave(UPLOAD_FOLDER+'/'+a+'target.png',x[i])
+      # plt.imsave(UPLOAD_FOLDER+'/'+a+'target.png',x)
 
       # return render_template('artist_page_scc.html', content_file= 'image/upload/'+a+'content.jpg', target= 'image/upload/'+a+'target.png')
-        
+
       return render_template('artist_page_scc.html', content_file= 'image/upload/content.jpg', target_file= 'image/upload/target.png')
 
 							

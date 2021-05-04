@@ -8,7 +8,7 @@ Original file is located at
 
 
 
-#from PIL import Image
+from PIL import Image
 import matplotlib.pyplot as plt
 import numpy as np
 import torch

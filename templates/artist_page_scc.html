@@ -102,8 +102,9 @@ Released   : 20131115
 <!--            <input type="submit" value="submit" onclick="$('#loading').show();" ></form> -->  
 		</div>
 	<div class="txt">
-		<h3>Painting Style</h3>
+		{% if True %}<a href="{{ url_for('static', filename=target_file)}}" download><button>Save</button></a>{% endif %}
 	</div>
+
 </div>
 
 <div class = "selector">
