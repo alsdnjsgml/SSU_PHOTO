@@ -10,34 +10,34 @@ import numpy as np
 
 TEMPLATE_FOLDER = '/content/SSU_PHOTO/templates' # 임의의 경로
 STATIC_FOLDER = '/content/SSU_PHOTO/static' # 임의의 경로
-app = Flask(__name__, template_folder=TEMPLATE_FOLDER, static_folder = STATIC_FOLDER)
+app_colab = Flask(__name__, template_folder=TEMPLATE_FOLDER, static_folder = STATIC_FOLDER)
 run_with_ngrok(app_colab)   #starts ngrok when the app is run
 
 UPLOAD_FOLDER = '/content/SSU_PHOTO/static/image/upload'
 style =""
 
-@app.route("/")
+@app_colab.route("/")
 def home():
 	return render_template("index.html")
 
-@app.route('/about')
+@app_colab.route('/about')
 def about():
   return render_template('about_page.html')
 
-@app.route('/scrath')
+@app_colab.route('/scrath')
 def scrath():
   return render_template('scrath_page.html')
 
-@app.route('/artist')
+@app_colab.route('/artist')
 def artist():
   return render_template('artist_page.html')
 
-@app.route('/gallery')
+@app_colab.route('/gallery')
 def gallery():
   return render_template('gallery_page.html')
     
     
-@app.route("/success", methods=['POST'])
+@app_colab.route("/success", methods=['POST'])
 def upload_file():
       a = str(np.random.randint(1,100))
       content = request.files['file1']
