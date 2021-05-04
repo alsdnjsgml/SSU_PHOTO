@@ -13,6 +13,7 @@ Released   : 20131115
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SSU photo studio | Artist Style</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -33,8 +34,8 @@ Released   : 20131115
 			<ul>
 				<li><a href=/ accesskey="1" title="">Homepage</a></li>
 				<li><a href=/about accesskey="2" title="">About</a></li>
-				<li class="current_page_item"><a href=/scrath accesskey="3" title="">Scrath function</a></li>
-				<li><a href=/artist accesskey="4" title="">artist style</a></li>
+				<li class="current_page_item"><a href=/scrath accesskey="3" title="">Scrath </a></li>
+				<li><a href=/artist accesskey="4" title="">painting style</a></li>
 				<li><a href=/gallery accesskey="5" title="">Gallery</a></li>
 
 			</ul>
@@ -70,7 +71,10 @@ Released   : 20131115
 	</div>
 		<div class="picture_box" style="text-align: center">
 			<h5>당신의 추억을 업로드해주세요</h5>
-			<img src="{{ url_for('static', filename='image/upload.png') }}" width="50px" height="50px">
+			<!-- <img src="{{ url_for('static', filename='image/upload.png') }}" width="50px" height="50px"> -->
+            <form>
+				<input type = "file" name = "fileupload" accept = "image/*" />
+			</form>
 		</div>
 	<div class="txt">
 		<h3>Txt 추가</h3>
@@ -84,11 +88,8 @@ Released   : 20131115
 	<div class="select_box" style="transform: rotate(45deg) translate(450px, -150px);"></div>
 	<div class="select_box" style="transform: rotate(135deg) translate(-600px, 0px);"></div>
 </div>
-
-<!-- <div id="selector" style="background-color: black; height: 220px; width: 800px; float: left;"> -->
-
 <div id="copyright" class="container">
-	<p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+   <p>&copy; SSU 2021 WEBPROGRAMING. All rights reserved. | Develop by <a href="http://fotogrph.com/">TEAM4</a> | Design by <a href="http://templated.co" rel="nofollow">TEAM4</a>. </p>
 </div>
 </body>
 </html>

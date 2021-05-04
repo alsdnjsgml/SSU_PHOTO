@@ -43,24 +43,15 @@ def upload_file():
       
       # vgg = style_transfer.model()
 
-      # style, target, x = [0 for i in range(5)],[0 for i in range(5)],[0 for i in range(5)]
+      # # #Resize style to match content, makes code easier
+      # style = style_transfer.load_image('/content/Museum_Neural_Art/static/image/s'+ style+'.jpg', shape=content.shape[-2:])
+      # target = style_transfer.stylize(content,style,vgg)
+      # x = style_transfer.im_convert(target)
+      # plt.imsave(UPLOAD_FOLDER+'/'+a+'target.png',x[i])
 
-      # for i in range(0,5):
-      #   # #Resize style to match content, makes code easier
-      #   style[i] = style_transfer.load_image('/content/Museum_Neural_Art/static/image/s'+ str(i+1)+'.jpg', shape=content.shape[-2:])
-      #   target[i] = style_transfer.stylize(content,style[i],vgg)
-      #   x[i] = style_transfer.im_convert(target[i])
-      #   plt.imsave(UPLOAD_FOLDER+'/'+a+'target_'+str(i)+'.png',x[i])
-
-      # return render_template('success.html', content_file= 'image/upload/'+a+'content.jpg', t_0= 'image/upload/'+a+'target_0.png',
-      #                        t_1= 'image/upload/'+a+'target_1.png', t_2= 'image/upload/'+a+'target_2.png', 
-      #                        t_3= 'image/upload/'+a+'target_3.png', t_4= 'image/upload/'+a+'target_4.png')
+      # return render_template('artist_page_scc.html', content_file= 'image/upload/'+a+'content.jpg', target= 'image/upload/'+a+'target.png')
         
-      return render_template('success.html',
-                              content_file= 'image/upload/sample/content.jpg', t_0= 'image/upload/sample/target_0.png',
-                              t_1= 'image/upload/sample/target_1.png', t_2= 'image/upload/sample/target_2.png', 
-                              t_3= 'image/upload/sample/target_3.png', t_4= 'image/upload/sample/target_4.png')
-
+      return render_template('artist_page_scc.html', content_file= 'image/upload/content.jpg', target= 'image/upload/target.png')
 
 							
 if __name__ == "__main__":

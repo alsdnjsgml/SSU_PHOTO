@@ -1003,9 +1003,18 @@ ul.contact li a.icon-rss:before
 }
 
 .select_box{
-	width: 150px;
-	height: 200px;
+	width: 130px;
+	height: 280px;
 	border: 1px solid black;
+}
+
+
+input.select_box:hover{
+    transform:scale(1.2);             /*  default */
+    -webkit-transform:scale(1.2);     /*  크롬 */
+    -moz-transform:scale(1.2);       /* FireFox */
+    -o-transform:scale(1.2);           /* Opera */
+     transition: transform.5s;
 }
 
 .picture-space{
@@ -1024,3 +1033,16 @@ ul.contact li a.icon-rss:before
 	justify-content: center;
 	align-items: center;
 }
+
+.gallery {
+	background-color: white;
+	float: left;
+	height: 1150px; width: 100%;
+}
+
+.gallery_picture {
+	background-color: white;
+	float: left;
+	padding: 10px 10px 10px 10px;
+}
+
