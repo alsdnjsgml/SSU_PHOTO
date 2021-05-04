@@ -1010,7 +1010,7 @@ ul.contact li a.icon-rss:before
 
 
 input.select_box:hover{
-    transform: scale(1.5);
+    transform: scale(1.2);
     transition: transform.5s;
 }
 
