@@ -79,26 +79,23 @@ Released   : 20131115
 		<div class="frame">
 			<h5>액자1</h5>
 		</div> 
+        
 		<div class="frame_space"></div>
 		<div class="frame">
 			<h5>액자2</h5>
 		</div>
+        
 		<div class="frame_space"></div>
 		<div class="frame">
 			<h5>액자3</h5>
 		</div>
+        
 	</div>
 	<div class="picture-space">
 	</div>
 
 		<div class="picture_box" style="text-align: center">
-			<h5>당신의 추억을 업로드해주세요</h5>
-
-              {% if True %}
-              <img src="{{ url_for('static', filename=target_file) }}" width="50px" height="50px" border='0' alt="Image">
-              {% endif %}
-                        
-            <br>
+         {% if True %}<img class="picture_box" src="{{ url_for('static', filename=target_file) }}" alt="Image" style="padding: 0px;">{% endif %}
 <!--            <input type="submit" value="submit" onclick="$('#loading').show();" ></form> -->  
 		</div>
 	<div class="txt">

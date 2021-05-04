@@ -52,7 +52,7 @@ def upload_file():
 
       # return render_template('artist_page_scc.html', content_file= 'image/upload/'+a+'content.jpg', target= 'image/upload/'+a+'target.png')
 
-      return render_template('artist_page_scc.html', content_file= 'image/upload/content.jpg', target_file= 'image/upload/target.png')
+      return render_template('artist_page_scc.html', content_file= 'image/upload/content.jpg', target_file= 'image/upload/target.jpg')
 
 							
 if __name__ == "__main__":

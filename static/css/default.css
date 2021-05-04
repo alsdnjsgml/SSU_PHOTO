@@ -1010,11 +1010,8 @@ ul.contact li a.icon-rss:before
 
 
 input.select_box:hover{
-    transform:scale(1.2);             /*  default */
-    -webkit-transform:scale(1.2);     /*  크롬 */
-    -moz-transform:scale(1.2);       /* FireFox */
-    -o-transform:scale(1.2);           /* Opera */
-     transition: transform.5s;
+    transform: scale(1.5);
+    transition: transform.5s;
 }
 
 .picture-space{
