@@ -40,8 +40,8 @@ def gallery():
 @app_colab.route("/success", methods=['POST'])
 def upload_file():
       a = str(np.random.randint(1,100))
-      content = request.files['file1']
-      style = request.form.get('style')
+      content = request.files['imageFile0']
+      style = request.form.get('value')
       content.save(os.path.join(UPLOAD_FOLDER+ '/'+a+'content.jpg'))
 
       #load in content and style image
@@ -56,7 +56,7 @@ def upload_file():
       x = style_transfer.im_convert(target)
       plt.imsave(UPLOAD_FOLDER+'/'+a+'target.png',x)
 
-      return render_template('artist_page_scc.html', content_file= 'image/upload/'+a+'content.jpg', target= 'image/upload/'+a+'target.png')
+      return render_template('artist_page_scc.html', target= 'image/upload/'+a+'target.png')
 
 							
 if __name__ == '__main__':
