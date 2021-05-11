@@ -2,11 +2,14 @@ from flask import Flask , render_template ,request
 import os, sys
 import matplotlib.pyplot as plt
 import style_transfer
+from flask import Flask, url_for, redirect, render_template, request
+import os
+import time
+import numpy as np
 
 app = Flask(__name__)
 
 UPLOAD_FOLDER = './static/image/upload'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 style =""
 
 @app.route("/")
@@ -32,27 +35,24 @@ def gallery():
     
 @app.route("/success", methods=['POST'])
 def upload_file():
-      # 구름ide에서 실행 불가. cpu 터짐
-      # a = str(np.random.randint(1,100))
-      # content = request.files['file1']
-      # style = request.form.get('style')
-      # content.save(os.path.join(UPLOAD_FOLDER+ '/'+a+'content.jpg'))
+      a = str(np.random.randint(1,100))
+      content = request.files['imageFile0']
+      style = request.form.get('value')
+      content.save(os.path.join(UPLOAD_FOLDER+ '/'+a+'content.jpg'))
 
-      # #load in content and style image
-      # content = style_transfer.load_image(UPLOAD_FOLDER+'/'+a+'content.jpg')
+      #load in content and style image
+      content = style_transfer.load_image(UPLOAD_FOLDER+'/'+a+'content.jpg')
       
-      # vgg = style_transfer.model()
+      vgg = style_transfer.model()
 
-      # # #Resize style to match content, makes code easier
-      # style = style_transfer.load_image(UPLOAD_FOLDER+'/s'+ str(style)+'.jpg', shape=content.shape[-2:])
+      # #Resize style to match content, makes code easier
+      style = style_transfer.load_image(UPLOAD_FOLDER+'/s'+ str(style)+'.jpg', shape=content.shape[-2:])
       
-      # target = style_transfer.stylize(content,style,vgg)
-      # x = style_transfer.im_convert(target)
-      # plt.imsave(UPLOAD_FOLDER+'/'+a+'target.png',x)
+      target = style_transfer.stylize(content,style,vgg)
+      x = style_transfer.im_convert(target)
+      plt.imsave(UPLOAD_FOLDER+'/'+a+'target.png',x)
 
-      # return render_template('artist_page_scc.html', content_file= 'image/upload/'+a+'content.jpg', target= 'image/upload/'+a+'target.png')
-
-      return render_template('artist_page_scc.html', content_file= 'image/upload/content.jpg', target_file= 'image/upload/target.jpg')
+      return render_template('artist_page_scc.html', target= 'image/upload/'+a+'target.png')
 
 							
 if __name__ == "__main__":
