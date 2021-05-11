@@ -35,24 +35,24 @@ def gallery():
     
 @app.route("/success", methods=['POST'])
 def upload_file():
-      a = str(np.random.randint(1,100))
-      content = request.files['imageFile0']
-      style = request.form.get('value')
-      content.save(os.path.join(UPLOAD_FOLDER+ '/'+a+'content.jpg'))
+      # a = str(np.random.randint(1,100))
+      # content = request.files['imageFile0']
+      # style = request.form.get('value')
+      # content.save(os.path.join(UPLOAD_FOLDER+ '/'+a+'content.jpg'))
 
-      #load in content and style image
-      content = style_transfer.load_image(UPLOAD_FOLDER+'/'+a+'content.jpg')
+      # #load in content and style image
+      # content = style_transfer.load_image(UPLOAD_FOLDER+'/'+a+'content.jpg')
       
-      vgg = style_transfer.model()
+      # vgg = style_transfer.model()
 
-      # #Resize style to match content, makes code easier
-      style = style_transfer.load_image(UPLOAD_FOLDER+'/s'+ str(style)+'.jpg', shape=content.shape[-2:])
+      # # #Resize style to match content, makes code easier
+      # style = style_transfer.load_image(UPLOAD_FOLDER+'/s'+ str(style)+'.jpg', shape=content.shape[-2:])
       
-      target = style_transfer.stylize(content,style,vgg)
-      x = style_transfer.im_convert(target)
-      plt.imsave(UPLOAD_FOLDER+'/'+a+'target.png',x)
+      # target = style_transfer.stylize(content,style,vgg)
+      # x = style_transfer.im_convert(target)
+      # plt.imsave(UPLOAD_FOLDER+'/'+a+'target.png',x)
 
-      return render_template('artist_page_scc.html', target= 'image/upload/'+a+'target.png')
+      return render_template('artist_page_scc.html', target= 'image/upload/target.jpg')
 
 							
 if __name__ == "__main__":
