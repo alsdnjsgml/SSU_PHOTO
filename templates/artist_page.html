@@ -106,20 +106,18 @@
         </div>
       </div>
       <div class="picture-space"></div>
-      <form action="/success" method="post" enctype = "multipart/form-data">
+
       <div class="picture_box" style="text-align: center">
         <h5>당신의 추억을 업로드해주세요</h5>
         <input type="file" name="file1" style="display: none" />
         <!--required-->
         <img
-          style="cursor: pointer;"
+          style="cursor: pointer"
           src="{{ url_for('static', filename='image/upload.png') }}"
           width="50px"
           height="50px"
           border="0"
-          onclick="document.all.file1.click(); document.all.file2.value=document.all.file1.value"
-
-          
+          onclick="document.all.file1.click()"
         />
 
         <br />
@@ -146,7 +144,7 @@
           value="1"
           class="select_box"
           src="{{ url_for('static', filename='image/upload/s1.jpg') }}"
-          onclick="uploadMultiFile();"
+          onClick="reply_click(event)"
         />
       </div>
 
@@ -161,7 +159,7 @@
           value="2"
           class="select_box"
           src="{{ url_for('static', filename='image/upload/s2.jpg') }}"
-          onclick="uploadMultiFile();"
+          onClick="reply_click(event)"
         />
       </div>
 
@@ -176,7 +174,7 @@
           value="3"
           class="select_box"
           src="{{ url_for('static', filename='image/upload/s3.jpg') }}"
-          onclick="uploadMultiFile();"
+          onClick="reply_click(event)"
         />
       </div>
 
@@ -191,7 +189,7 @@
           value="4"
           class="select_box"
           src="{{ url_for('static', filename='image/upload/s4.jpg') }}"
-          onclick="uploadMultiFile();"
+          onClick="reply_click(event)"
         />
       </div>
 
@@ -206,11 +204,11 @@
           value="5"
           class="select_box"
           src="{{ url_for('static', filename='image/upload/s5.jpg') }}"
-          onclick="uploadMultiFile();"
+          onClick="reply_click(event)"
         />
       </div>
     </div>
-    </form>
+
     <div id="copyright" class="container">
       <p>
         &copy; SSU 2021 WEBPROGRAMING. All rights reserved. | Develop by
@@ -234,15 +232,17 @@
       src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"
     ></script>
     <script>
-      function uploadMultiFile(e) {
+      function reply_click(e) {
+        event.preventDefault();
         // 서버에 보낼 폼 데이터 양식 생성
-        var formData = new FormData();
+        let formData = new FormData();
 
         // 선택한 file input에서 파일을 가져와 폼 데이터에 추가
-        if (document.getElementsByName("file1").files.length > 0) {
-          var files = document.getElementsByName("file1").files;
+        let imgFile = document.getElementsByName("file1")[0];
+        if (imgFile.files.length > 0) {
+          var files = imgFile.files;
           $.each(files, function (key, value) {
-            formData.append(key, value);
+            formData.append("imageFile" + key, value);
           });
         }
 
@@ -251,23 +251,20 @@
           formData.append("value", e.target.value);
         }
 
-
         $.ajax({
           type: "POST",
           url: "/success",
           data: formData,
+          enctype: 'multipart/form-data', 
           processData: false,
           contentType: false,
-          success: function (data) {
-            if (data.result) {
-              alert("Success");
-            } else {
-              alert(data.result);
+          beforeSend: function() { //로딩이미지 보여주기
+              $('#loading').show();
+          },
+          success : function(response){
+            document.write(response);
+            $('#loading').hide();
             }
-          },
-          err: function (err) {
-            alert(err.status);
-          },
         });
       }
     </script>
