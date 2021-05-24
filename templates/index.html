@@ -1,15 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
-Design by TEMPLATED
-http://templated.co
-Released for free under the Creative Commons Attribution License
 
-Name       : Erubescent 
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20131115
-
--->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -51,14 +41,43 @@ Released   : 20131115
 	<div id="featured-wrapper">
 		
 		<div class="extra2 margin-btm container">
+            <br> <!-- 동영상 -->
+            <div class="titleVideo">
+                <style>
+                  body { padding: 0px; margin: 0px; }
+                  .jb-box { width: 100%; height: 500px; overflow: hidden;margin: 0px auto; position: relative; }
+                    
+                  video { max-height: 100%; max-width: 95%; display: block; margin: auto; }
+                    .jb-text { position: absolute; left: 0%; top: 50%; width: 100%; }
+                    .jb-text h1 { margin-top: 30px; margin-bottom: 30px; text-align: center; font-size: 48px; color: #F87979; }
+                    .jb-text p { margin-top: 30px; margin-bottom: 30px; text-align: center; font-size: 20px; color: #F87979; }
+                    
+                </style>
+
+            <video muted autoplay loop>
+                <source src="{{ url_for('static', filename='image/Girl.mp4') }}" type="video/mp4">
+                <strong>Your browser does not support the video tag.</strong>
+            </video>
+                  <div class="jb-text">
+                      <h1>SSU PHOTOSTUDIO</h1>
+                      <p>
+                          made by TEAM4
+                      </p>
+                </div>
+         
+            </div>
+            <br>
+            <br>
+            <br>
+            
 			<div class="ebox1">
 				<div class="title">
 					<!-- <h5>샘플1</h5> -->
 					<span class="byline"></span>
 				</div>
-				<img src="{{ url_for('static', filename='image/s1-2.jpeg') }}" alt="스크래치1" width="500"/>                
+				<img src="{{ url_for('static', filename='image/s1.GIF') }}" alt="스크래치1" height="500" width="500"/>                
 				<!-- <p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum. Aenean lectus lorem, imperdiet at, ultrices eget, ornare et, wisi. </p> -->
-				<a href="#" class="button">Go to scrath</a>
+				<a href="/scrath" class="button">Go to scrath</a>
 			</div>		
 
 			<div class="ebox2">
@@ -66,35 +85,14 @@ Released   : 20131115
 					<!-- <h2>샘플2</h2> -->
 					<span class="byline"></span>
 				</div>
-                <img src="{{ url_for('static', filename='image/a1-2.png') }}" alt="화풍1" width="500"/>
+                <img src="{{ url_for('static', filename='image/p1.GIF') }}" alt="화풍1" height="500" width="500"/>
 				<!-- <p>Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna, elementum ut, vestibulum eu, facilisis quis, arcu. Mauris a dolor. Nulla facilisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed blandit. Phasellus pellentesque, ante nec iaculis dapibus, eros justo auctor lectus.</p> -->
-				<a href="#" class="button">Go to artist style</a>
+				<a href="/artist" class="button">Go to painting style</a>
+               
 			</div>		
 
 		</div>	
 
-		<div class="extra2 container">
-			<div class="ebox1">
-				<div class="title">
-					<!-- <h2>샘플3</h2> -->
-					<span class="byline"></span>
-				</div>
-                <img src="{{ url_for('static', filename='image/a2-1.png') }}" alt="화풍2" width="500"/>
-				<!-- <p>Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo. Pellentesque imperdiet. Pellentesque viverra vulputate enim.</p> -->
-				<a href="#" class="button">Go to artist style</a>
-			</div>		
-
-			<div class="ebox2">
-				<div class="title">
-					<!-- <h2>샘플4</h2> -->
-					<span class="byline"></span>
-				</div>
-                <img src="{{ url_for('static', filename='image/s2-2.jpeg') }}" alt="스크래치2" width="500" heigth="500"/>
-				<!-- <p>Proin gravida orci porttitor enim accumsan lacinia. Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Aliquam libero. Vivamus nisl nibh, iaculis vitae, viverra sit amet, ullamcorper vitae, turpis. Aliquam erat volutpat. Vestibulum dui sem, pulvinar sed, imperdiet nec, iaculis nec, leo. </p> -->
-				<a href="#" class="button">Go to scrath</a>
-			</div>		
-
-		</div>	
 
 	</div>
 </div>

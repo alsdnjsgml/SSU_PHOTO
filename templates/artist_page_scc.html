@@ -87,36 +87,36 @@ Released   : 20131115
 		{% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
 	</div>
 
-</div>
-
-<div class = "selector">
+</div> 
+<form action="/artist"> <!-- 화풍 클릭시 초기 화면으로 돌아감 -->
+<div class = "selector"> 
 	<div style="width: auto; height: 30%;"></div>
 	<div class="semicircle"></div>
     
 	<div class="select_box" style="transform: rotate(90deg) translate(230px, -300px);"> <!-- <p>1</p> -->
-    <input type="image" name="style" value = "1" class = "select_box" src="{{ url_for('static', filename='image/upload/s1.jpg') }}">
+    <input type="image" value = "1" class = "select_box" src="{{ url_for('static', filename='image/upload/s1.jpg') }}" >
     </div>
     
 	<div class="select_box" style="transform: rotate(60deg) translate(380px, -200px);"> <!--<p>2</p> -->
-    <input type="image" name="style" value = "2" class = "select_box" src="{{ url_for('static', filename='image/upload/s2.jpg') }}">
+    <input type="image" value = "2" class = "select_box" src="{{ url_for('static', filename='image/upload/s2.jpg') }}" >
     </div>
     
 	<div class="select_box" style="transform: rotate(135deg) translate(-650px, 0px);"> <!--<p>3</p>-->
-    <input type="image" name="style" value = "3" class = "select_box" src="{{ url_for('static', filename='image/upload/s3.jpg') }}">
+    <input type="image" value = "3" class = "select_box" src="{{ url_for('static', filename='image/upload/s3.jpg') }}" >
     </div>
     
 	<div class="select_box" style="transform: rotate(120deg) translate(-600px, -50px);"> <!--<p>4</p>-->
-    <input type="image" name="style" value = "4" class = "select_box" src="{{ url_for('static', filename='image/upload/s4.jpg') }}">
+    <input type="image" value = "4" class = "select_box" src="{{ url_for('static', filename='image/upload/s4.jpg') }}" >
     </div>
     
 	<div class="select_box" style="transform: rotate(30deg) translate(350px, -430px);"> <!--<p>5</p> -->
-    <input type="image" name="style" value = "5" class = "select_box" src="{{ url_for('static', filename='image/upload/s5.jpg') }}">
+    <input type="image" value = "5" class = "select_box" src="{{ url_for('static', filename='image/upload/s5.jpg') }}" >
     </div>
 </div>
-</div>
-    
+</form>
 <div id="copyright" class="container">
    <p>&copy; SSU 2021 WEBPROGRAMING. All rights reserved. | Develop by <a href="http://fotogrph.com/">TEAM4</a> | Design by <a href="http://templated.co" rel="nofollow">TEAM4</a>. </p>
-    
+</div>
+        
 </body>
 </html>

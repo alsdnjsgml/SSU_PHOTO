@@ -965,7 +965,7 @@ ul.contact li a.icon-rss:before
 .frame{
 	width: 100px;
 	height: 150px;
-	border: 1px solid black;
+	/* border: 1px solid black; */
 }
 
 .frame_space{
@@ -980,6 +980,18 @@ ul.contact li a.icon-rss:before
 	border: 1px dashed;
 	padding: 10px;
 	margin:0 auto
+}
+
+.back {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.front {
+	position: absolute;
+	top: 0;
+	left: 20px;
 }
 
 .txt{

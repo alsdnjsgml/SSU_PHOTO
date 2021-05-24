@@ -53,6 +53,19 @@
         z-index: 100;
       }
     </style>
+      <script type="text/javascript">
+	function change(str){
+		document.getElementById("bigPic").src = str;
+	}
+	function change2(s){
+		document.getElementById("bigPic").src = s.src;
+	}
+          //텍스트 출력용
+    function printName()  {
+        const name = document.getElementById('name').value;
+        document.getElementById("result").innerText = name;
+    }
+</script>
 
     <!--[if IE 6
       ]><link href="default_ie6.css" rel="stylesheet" type="text/css"
@@ -98,34 +111,54 @@
         "
       >
         <div class="frame">
-          <h5>액자1</h5>
+            <img onclick = "change2(this)" src= "{{ url_for('static', filename='image/photoframe.png') }}" width="100px" height="150px" id = "pic1">
         </div>
 
         <div class="frame_space"></div>
 
         <div class="frame">
-          <h5>액자2</h5>
+            <img onclick = "change2(this)" src= "{{ url_for('static', filename='image/photoframe_1.png') }}" width="100px" height="150px" id = "pic2"> 
         </div>
 
         <div class="frame_space"></div>
 
         <div class="frame">
-          <h5>액자3</h5>
         </div>
       </div>
       <div class="picture-space"></div>
-
-      <div id="first" class="picture_box" style="text-align: center">
-        <h5>당신의 추억을 업로드해주세요 (500x500 이하 권장)</h5>
-			<input type = "file" id = "fileupload" name = "file1" accept = "image/*" onchange="setThumbnail(event);"/>
+      <div class="box">
+          <div id="first" class="picture_box" style="text-align: center"> <!-- 텍스트 위치 센터로 지정-->
+          <h5>당신의 추억을 업로드 해주세요.</h5> 
+          <h5>(500x500 이하 size 권장)</h5>
+		<!--	<input type = "file" id = "fileupload" name = "file1" accept = "image/*" onchange="setThumbnail(event);"/> -->
+        <div class = "front"><img src = "{{ url_for('static', filename='image/s2.jpeg') }}" width = "550px" height = "350px">
+              </div>
+              <div class="back"><img src = "{{ url_for('static', filename='image/photoframe0.png') }}" height="400px" id = "bigPic"></div>
+        <input type="file" 
+               id="fileupload" 
+               name="file1" 
+               style='display: none;' 
+               accept = "image/*" 
+               onchange="setThumbnail(event);"/
+               >
+        <img src="{{ url_for('static', filename='image/upload.png') }}" 
+             style="cursor:pointer;" 
+             width="10%" 
+             onclick='document.all.file1.click()' 
+             > 
+        <div id='result'></div>
       </div>
+        </div>
+      
         
-        <div id="image_container" style="text-align: center; display:none">
+        <div id='image_container' style="text-align:center; display:none;"> 
 		</div>
-        
-      <div class="txt">
-        <h3>Painting Style</h3>
+    
+      <div class="txt" style="text-align:center; padding-top:4px;"> 한 마디 입력하기 😎 
+        <input id='name' onkeyup='printName()'/>
       </div>
+
+        
     </div>
 
     <div class="selector">
@@ -217,7 +250,7 @@
     </div>
 
     <div id="loading" style="display: none">
-      Please Wait, Loading…
+        <b>Please Wait, Loading…</b>
       <br />
       <img src={{ url_for('static', filename='image/loading_horse.gif') }}
       alt="" />
@@ -283,5 +316,7 @@
         });
       }
     </script>
+
+      <script type="text/javascript" src="text.js"></script> 
   </body>
 </html>
