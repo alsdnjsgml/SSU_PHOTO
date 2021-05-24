@@ -86,6 +86,8 @@ Released   : 20131115
 	<div class="txt">
 		{% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
 	</div>
+	
+	입력한 값 : {% if True %}{{fw_text}}{% endif %}
 
 </div> 
 <form action="/artist"> <!-- 화풍 클릭시 초기 화면으로 돌아감 -->
