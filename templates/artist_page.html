@@ -298,15 +298,15 @@
           return ;
         }
 
-
         // 클릭한 input image 에서 value 값을 가져와 폼 데이터에 추가
         if (e.target.type == "image") {
           formData.append("value", e.target.value);
         }
 
-	var fw_text = document.getElementsByName("name");
-        if (fw_text.length > 0 ) {
-            formData.append("fw_text", fw_text[0].value);
+	// 입력한 값 있으면 
+        let fw_text = document.getElementById("name").value;
+        if (fw_text != "") {
+          formData.append("fw_text", fw_text);
         }
 	      
         $.ajax({
