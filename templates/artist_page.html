@@ -299,6 +299,11 @@
           formData.append("value", e.target.value);
         }
 
+	var fw_text = document.getElementsByName("name");
+        if (fw_text.length > 0 ) {
+            formData.append("fw_text", fw_text[0].value);
+        }
+	      
         $.ajax({
           type: "POST",
           url: "/success",
