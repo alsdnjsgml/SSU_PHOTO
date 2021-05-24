@@ -293,6 +293,11 @@
             formData.append("imageFile" + key, value);
           });
         }
+        else if (imgFile.files.length == 0) {
+          alert('이미지를 업로드 해주세요');
+          return ;
+        }
+
 
         // 클릭한 input image 에서 value 값을 가져와 폼 데이터에 추가
         if (e.target.type == "image") {
