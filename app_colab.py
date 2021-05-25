@@ -35,7 +35,16 @@ def artist():
 @app_colab.route('/gallery')
 def gallery():
   return render_template('gallery_page.html')
-    
+
+@app_colab.route("/scrath_out", methods=['POST'])
+def scrath_upload_file():
+       color_file = request.files['fileupload']
+       gray_file = request.files['fileupload']     
+  	
+       gray_file.save(os.path.join(STATIC_FOLDER+ '/'+'image/example_gray.jpeg'))
+       color_file.save(os.path.join(STATIC_FOLDER+ '/'+'image/example_org.jpeg'))
+
+       return render_template('scrath_page_scc.html')
     
 @app_colab.route("/success", methods=['POST'])
 def upload_file():
