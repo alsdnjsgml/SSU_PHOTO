@@ -22,6 +22,37 @@ Released   : 20131115
 <link href="{{ url_for('static', filename='css/fonts.css') }}" rel="stylesheet" type="text/css" media="all" />
 <link href="{{ url_for('static', filename='css/scratch.css') }}" rel="stylesheet" type="text/css" media="all" />
 
+<style>
+        
+        #image_container > img {
+            height: 600px;
+            width: 400px;
+            border: 1px dashed;
+            margin: 0 auto;
+        }
+        
+      #loading {
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        position: fixed;
+        display: block;
+        opacity: 0.7;
+        background-color: #fff;
+        z-index: 99;
+        color: black;
+        text-align: center;
+        padding: 300px 10px;
+      }
+
+      #loading-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 100;
+      }
+</style>
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 </head>
@@ -168,6 +199,16 @@ Released   : 20131115
    <p>&copy; SSU 2021 WEBPROGRAMING. All rights reserved. | Develop by <a href="http://fotogrph.com/">TEAM4</a> | Design by <a href="http://templated.co" rel="nofollow">TEAM4</a>. </p>
 </div>
 
+<div id="loading" style="display: none">
+        <b>Please Wait, Loading…</b>
+      <br />
+      <img src={{ url_for('static', filename='image/loading_horse.gif') }}
+      alt="" />
+      <br />
+      <img src={{ url_for('static', filename='image/loading_wave.gif') }} alt=""
+      />
+</div>
+	
 <!-- 필터 js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="{{ url_for('static', filename='js/colorFilter.js') }}"></script>
@@ -186,6 +227,7 @@ Released   : 20131115
             });
         </script>
 
+	
 <script>
 	function reply_click(e) {
 	event.preventDefault();
