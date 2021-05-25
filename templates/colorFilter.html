@@ -6,45 +6,24 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <input id = "fileupload" type = "file" accept = "image/*" required>
-        <!-- <form>
-            <input type="radio" name="corol" value="org" id="org">
+        <input id = "fileupload" type = "file" accept = "image/*" >
+        <form>
+            <input type="radio" name="color" value="org" id="org">
             <label for="org">원본</label>
-            <input type="radio" name="corol" value="red" id="red">
+            <input type="radio" name="color" value="red" id="red">
             <label for="red">빨강</label>
-            <input type="radio" name="corol" value="blue" id="blue">
+            <input type="radio" name="color" value="blue" id="blue">
             <label for="blue">파랑</label>
 
-        </form> -->
-        <input  id = "selectColor" type="submit">
+            <button type="button" id = "selectColor" type="submit">제출</button>
+        </form>
 
-        <canvas id="canvas"></canvas>
+        <canvas id="picture_canvas"></canvas>
 
-
-        <input type="button" value="Reset" onclick="$('#scratch').wScratchPad('reset');"/>
-        <input type="button" value="Clear" onclick="$('#scratch').wScratchPad('clear');"/>
 
         <!-- 필터 js -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="colorFilter.js"></script>
 
-        <!-- 스크래치 js -->
-        <script
-        src="https://code.jquery.com/jquery-2.2.4.js"
-        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-        crossorigin="anonymous"></script>
-        
-        <script src="wScratchPad.min.js"></script>
-        <script type="text/javascript">
-            
-            $('#scratch').wScratchPad({
-                size        : 30,          // The size of the brush/scratch.
-                bg          : 'example_org.jpeg',  // Background (image path or hex color).
-                fg          : 'example_gray.jpeg'  // Foreground (image path or hex color).
-            });
-            $("#scratch").wScratchPad('fg', 'momin_gray.jpg');
-            $("#scratch").wScratchPad('bg', 'momin_blue.jpg');
-            
-        </script>
     </body>
 </html>
