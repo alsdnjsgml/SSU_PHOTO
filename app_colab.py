@@ -36,6 +36,11 @@ def artist():
 def gallery():
   return render_template('gallery_page.html')
 
+@app_colab.route('/artist_page_scc')
+def artist_scc():
+  fw_text = "입력한 text 문구"
+  return render_template('artist_page_scc.html', target = 'image/upload/target.jpg', fw_text=fw_text)
+
 @app_colab.route("/scrath_out", methods=['POST'])
 def scrath_upload_file():
        color_file = request.files['color_file']
