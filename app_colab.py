@@ -38,14 +38,15 @@ def gallery():
 
 @app_colab.route("/scrath_out", methods=['POST'])
 def scrath_upload_file():
-       color_file = request.files['fileupload']
-       gray_file = request.files['fileupload']     
+       color_file = request.files['color_file']
+       gray_file = request.files['gray_file']     
   	
        gray_file.save(os.path.join(STATIC_FOLDER+ '/'+'image/example_gray.jpeg'))
        color_file.save(os.path.join(STATIC_FOLDER+ '/'+'image/example_org.jpeg'))
 
        return render_template('scrath_page_scc.html')
-    
+   
+	
 @app_colab.route("/success", methods=['POST'])
 def upload_file():
       fw_text = request.form.get('fw_text') 
