@@ -292,12 +292,22 @@
             formData.append("imageFile" + key, value);
           });
         }
+        else if (imgFile.files.length == 0) {
+          alert('이미지를 업로드 해주세요');
+          return ;
+        }
 
         // 클릭한 input image 에서 value 값을 가져와 폼 데이터에 추가
         if (e.target.type == "image") {
           formData.append("value", e.target.value);
         }
 
+	// 입력한 값 있으면 
+        let fw_text = document.getElementById("name").value;
+        if (fw_text != "") {
+          formData.append("fw_text", fw_text);
+        }
+	      
         $.ajax({
           type: "POST",
           url: "/success",
@@ -316,5 +326,11 @@
       }
     </script>
 
+<<<<<<< HEAD
       <!-- <script type="text/javascript" src="text.js"></script>  -->
 </html>
+=======
+      <script type="text/javascript" src="{{ url_for('static', filename='js/text.js') }}"></script> 
+  </body>
+</html>
+>>>>>>> 02fa13703c973ac9f681f7f1bc992a806738c54f
