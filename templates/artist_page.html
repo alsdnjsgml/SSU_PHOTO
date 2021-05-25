@@ -130,7 +130,6 @@
           <div id="first" class="picture_box" style="text-align: center"> <!-- 텍스트 위치 센터로 지정-->
           <h5>당신의 추억을 업로드 해주세요.</h5> 
           <h5>(500x500 이하 size 권장)</h5>
-		<!--	<input type = "file" id = "fileupload" name = "file1" accept = "image/*" onchange="setThumbnail(event);"/> -->
         <div class = "front"><img src = "{{ url_for('static', filename='image/s2.jpeg') }}" width = "550px" height = "350px">
               </div>
               <div class="back"><img src = "{{ url_for('static', filename='image/photoframe0.png') }}" height="400px" id = "bigPic"></div>
@@ -317,6 +316,5 @@
       }
     </script>
 
-      <script type="text/javascript" src="text.js"></script> 
-  </body>
+      <!-- <script type="text/javascript" src="text.js"></script>  -->
 </html>
