@@ -84,15 +84,86 @@ Released   : 20131115
 	</div>
 </div>
 
-<div class = "selector">
-	<div style="width: auto; height: 30%;"></div>
-	<div class="semicircle"></div>
-	<div class="select_box" style="transform: rotate(90deg) translate(230px, -300px);"><p>1</p></div>
-	<div class="select_box" style="transform: rotate(60deg) translate(380px, -200px);"><p>2</p></div>
-	<div class="select_box" style="transform: rotate(135deg) translate(-650px, 0px);"><p>3</p></div>
-	<div class="select_box" style="transform: rotate(120deg) translate(-600px, -50px);"><p>4</p></div>
-	<div class="select_box" style="transform: rotate(30deg) translate(350px, -430px);"><p>5</p></div>
-</div>
+    <div class="selector">
+      <div style="width: auto; height: 30%"></div>
+      <div class="semicircle"></div>
+
+      <div
+        class="select_box"
+        style="transform: rotate(90deg) translate(230px, -300px)"
+      >
+        <!-- <p>1</p> -->
+        <input
+          type="image"
+          name="style"
+          value="green"
+          class="select_box"
+          src="{{ url_for('static', filename='image/upload/s1.jpg') }}"
+          onClick="reply_click(event)"
+        />
+      </div>
+
+      <div
+        class="select_box"
+        style="transform: rotate(60deg) translate(380px, -200px)"
+      >
+        <!--<p>2</p> -->
+        <input
+          type="image"
+          name="style"
+          value="green"
+          class="select_box"
+          src="{{ url_for('static', filename='image/upload/s2.jpg') }}"
+          onClick="reply_click(event)"
+        />
+      </div>
+
+      <div
+        class="select_box"
+        style="transform: rotate(135deg) translate(-650px, 0px)"
+      >
+        <!--<p>3</p>-->
+        <input
+          type="image"
+          name="style"
+          value="original"
+          class="select_box"
+          src="{{ url_for('static', filename='image/upload/s3.jpg') }}"
+          onClick="reply_click(event)"
+        />
+      </div>
+
+      <div
+        class="select_box"
+        style="transform: rotate(120deg) translate(-600px, -50px)"
+      >
+        <!--<p>4</p>-->
+        <input
+          type="image"
+          name="style"
+          value="red"
+          class="select_box"
+          src="{{ url_for('static', filename='image/upload/s4.jpg') }}"
+          onClick="reply_click(event)"
+        />
+      </div>
+
+      <div
+        class="select_box"
+        style="transform: rotate(30deg) translate(350px, -430px)"
+      >
+        <!--<p>5</p> -->
+        <input
+          type="image"
+          name="style"
+          value="blue"
+          class="select_box"
+          src="{{ url_for('static', filename='image/upload/s5.jpg') }}"
+          onClick="reply_click(event)"
+        />
+      </div>
+    </div>
+	
 <div id="copyright" class="container">
    <p>&copy; SSU 2021 WEBPROGRAMING. All rights reserved. | Develop by <a href="http://fotogrph.com/">TEAM4</a> | Design by <a href="http://templated.co" rel="nofollow">TEAM4</a>. </p>
 </div>
@@ -115,5 +186,47 @@ Released   : 20131115
             });
         </script>
 
+<script>
+	function reply_click(e) {
+	event.preventDefault();
+	// 서버에 보낼 폼 데이터 양식 생성
+	let formData = new FormData();
+
+	// 선택한 file input에서 파일을 가져와 폼 데이터에 추가
+	let imgFile = document.getElementsByName("fileupload")[0];
+	if (imgFile.files.length > 0) {
+	  var files = imgFile.files;
+	  $.each(files, function (key, value) {
+	    formData.append("imageFile" + key, value);
+	  });
+	}
+	else if (imgFile.files.length == 0) {
+	  alert('이미지를 업로드 해주세요');
+	  return ;
+	}
+
+	// 클릭한 input image 에서 value 값을 가져와 폼 데이터에 추가
+	if (e.target.type == "image") {
+	  formData.append("value", e.target.value);
+	}
+
+	$.ajax({
+	  type: "POST",
+	  url: "/scrath_out",
+	  data: formData,
+	  enctype: 'multipart/form-data', 
+	  processData: false,
+	  contentType: false,
+	  beforeSend: function() { //로딩이미지 보여주기
+	      $('#loading').show();
+	  },
+	  success : function(response){
+	    document.write(response);
+	    $('#loading').hide();
+	    }
+	});
+	}
+</script>
+	
 </body>
 </html>
