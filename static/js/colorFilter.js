@@ -67,13 +67,16 @@ $('input[name=style]').on('click', function () {
     grayCTX.putImageData(grayPixels, 0 , 0);
 
     // Canvas 이미지 서버 저장
-    saveImage(canvas_color);
+    var fileName_color = 'canvas_img_color' + '.jpeg';
+    var fileName_gray = 'canvas_img_gray' + '.jpeg';
+    saveImage(canvas_color,fileName_color);
+    saveImage(canvas_gray,fileName_gray);
 });
 
-// 캔버스의 이미지 저장
+// 캔버스의 이미지 서버 전송
 // 출처: https://webisfree.com/2020-08-05/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-canvas-%EC%9A%94%EC%86%8C%EB%A5%BC-%EC%9D%B4%EB%AF%B8%EC%A7%80%EB%A1%9C-%EC%A0%80%EC%9E%A5-%ED%9B%84-%EC%84%9C%EB%B2%84%EC%97%90-ajax%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
 // 출처: https://samanoske.tistory.com/94
-function saveImage(canvas) {
+function saveImage(canvas,fileName) {
     const imgBase64 = canvas.toDataURL('image/jpeg', 'image/octet-stream');
     const decodImg = atob(imgBase64.split(',')[1]);
 
@@ -82,7 +85,6 @@ function saveImage(canvas) {
     array.push(decodImg .charCodeAt(i));
     }
     const file = new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
-    const fileName = 'canvas_img_' + '.jpg';
     
     let formData = new FormData();
     formData.append('file', file, fileName);
