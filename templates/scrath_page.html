@@ -107,8 +107,9 @@ Released   : 20131115
             <form>
 				<input type = "file" id = "fileupload" name = "fileupload" accept = "image/*" />
 			</form>
-			<canvas id="picture_canvas"></canvas>
-			<div id="scratch"></div>
+			<canvas id="canvas_color" class="colorFilter_canvas" ></canvas>
+      <canvas id="canvas_gray" class="colorFilter_canvas" ></canvas>
+			<!-- <div id="scratch"></div> -->
 		</div>
 	<div class="txt">
 		<h3>Txt 추가</h3>
@@ -130,7 +131,6 @@ Released   : 20131115
           value="green"
           class="select_box"
           src="{{ url_for('static', filename='image/upload/s1.jpg') }}"
-          onClick="reply_click(event)"
         />
       </div>
 
@@ -145,7 +145,6 @@ Released   : 20131115
           value="green"
           class="select_box"
           src="{{ url_for('static', filename='image/upload/s2.jpg') }}"
-          onClick="reply_click(event)"
         />
       </div>
 
@@ -157,10 +156,9 @@ Released   : 20131115
         <input
           type="image"
           name="style"
-          value="original"
+          value="org"
           class="select_box"
           src="{{ url_for('static', filename='image/upload/s3.jpg') }}"
-          onClick="reply_click(event)"
         />
       </div>
 
@@ -175,7 +173,6 @@ Released   : 20131115
           value="red"
           class="select_box"
           src="{{ url_for('static', filename='image/upload/s4.jpg') }}"
-          onClick="reply_click(event)"
         />
       </div>
 
@@ -190,7 +187,6 @@ Released   : 20131115
           value="blue"
           class="select_box"
           src="{{ url_for('static', filename='image/upload/s5.jpg') }}"
-          onClick="reply_click(event)"
         />
       </div>
     </div>
@@ -228,7 +224,7 @@ Released   : 20131115
         </script>
 
 	
-<script>
+<!-- <script>
 	function reply_click(e) {
 	event.preventDefault();
 	// 서버에 보낼 폼 데이터 양식 생성
@@ -278,7 +274,7 @@ Released   : 20131115
 	    }
 	});
 	}
-</script>
+</script> -->
 	
 </body>
 </html>
