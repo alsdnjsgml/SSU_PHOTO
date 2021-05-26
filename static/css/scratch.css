@@ -5,13 +5,17 @@
 
 #scratch{
     position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
+    width: 50%;
+    height: 50vh;
 }
 
-#picture_canvas {
-    width: 100%; height: 100%;
+.colorFilter_canvas {
+    width: 100% ; height: 50%;
     border : black 1px solid;
-    z-index: 1;
+    /* border-radius: 5px; */
+}
+
+div {
+    width: 500px;
+    height: 600px;
 }
