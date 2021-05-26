@@ -39,13 +39,11 @@ def gallery():
 
 @app.route("/scrath_out", methods=['POST'])
 def scrath_upload_file():
-    color_file = request.files['color_file']
-    gray_file = request.files['gray_file']
+       file = request.files['file']
+       filename = file.filename
+       file.save(os.path.join(STATIC_FOLDER+ '/'+'image/'+filename))
 
-    gray_file.save(os.path.join('./static/image/example_gray.jpeg'))
-    color_file.save(os.path.join('./static/image/example_org.jpeg'))
-
-    return render_template('scrath_page_scc.html')
+       return render_template('scrath_page_scc.html')
 
 @app.route("/success", methods=['POST'])
 def upload_file():
