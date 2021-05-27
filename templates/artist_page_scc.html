@@ -92,13 +92,14 @@ Released   : 20131115
 	<div class="picture-space">
 	</div>
 	<div class ="box">
-		<div class = "front" id="picture_box" style="text-align: center">
-			{% if True %}<img src="{{ url_for('static', filename=target) }}" alt="Image">{% endif %}
+		<div class = "picture_box" style="text-align: center">
+			<div class="front">{% if True %}<img src="{{ url_for('static', filename=target) }}" alt="Image" width="400px" height="600px">{% endif %}</div>
+			<div class="back"><img src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="600px" height="400px" id = "bigPic"></div>
 		   </div>
 	   <div class="txt">
 		   {% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
 	   </div>
-	   <div class = "back"><img src = "{{ url_for('static', filename=image/photoframe_no.png)}}" width="600px" height="400px" id = "bigPic"></div>
+	   <!-- <div class = "back"><img src = "{{ url_for('static', filename='image/photoframe_no.png')}}" width="600px" height="400px" id = "bigPic"></div> -->
 	</div>
 
 	
