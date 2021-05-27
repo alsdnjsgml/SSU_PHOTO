@@ -29,6 +29,19 @@ Released   : 20131115
             margin: 0 auto;
         }
     </style>
+	      <script type="text/javascript">
+			function change(str){
+				document.getElementById("bigPic").src = str;
+			}
+			function change2(s){
+				document.getElementById("bigPic").src = s.src;
+			}
+				  //텍스트 출력용
+			function printName()  {
+				const name = document.getElementById('name').value;
+				document.getElementById("result").innerText = name;
+			}
+		</script>
     
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
@@ -63,29 +76,31 @@ Released   : 20131115
 	border: 0px; 
 	justify-content: center;
 	align-items: center;" >
-		<div class="frame">
-			<h5>액자1</h5>
-		</div> 
-        
-		<div class="frame_space"></div>
-		<div class="frame">
-			<h5>액자2</h5>
-		</div>
-        
-		<div class="frame_space"></div>
-		<div class="frame">
-			<h5>액자3</h5>
-		</div>
-        
+<div class="frame" border: 0.5px solid balck>
+	<h6>액자 없음</h6>
+	<img onclick = "change2(this)" src= "{{ url_for('static', filename='image/photoframe_no.png') }}" width="100px" height="150px" id = "pic1">
+</div> 
+<div class="frame_space"></div>
+<div class="frame">
+	<img onclick = "change2(this)" src= "{{ url_for('static', filename='image/photoframe.png') }}" width="100px" height="150px" id = "pic2"> 
+</div>
+<div class="frame_space"></div>
+<div class="frame">
+	<img onclick = "change2(this)" src= "{{ url_for('static', filename='image/photoframe_1.png') }}" width="100px" height="150px" id = "pic3">
 	</div>
+  </div>
 	<div class="picture-space">
 	</div>
-		<div id="picture_box" style="text-align: center">
-         {% if True %}<img src="{{ url_for('static', filename=target) }}" alt="Image">{% endif %}
-		</div>
-	<div class="txt">
-		{% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
+	<div class ="box">
+		<div class = "front" id="picture_box" style="text-align: center">
+			{% if True %}<img src="{{ url_for('static', filename=target) }}" alt="Image">{% endif %}
+		   </div>
+	   <div class="txt">
+		   {% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
+	   </div>
+	   <div class = "back"><img src = "{{ url_for('static', filename=image/photoframe_no.png)}}" width="600px" height="400px" id = "bigPic"></div>
 	</div>
+
 	
 	입력한 값 : {% if True %}{{fw_text}}{% endif %}
 
