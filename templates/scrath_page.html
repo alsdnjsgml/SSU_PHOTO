@@ -102,15 +102,16 @@ Released   : 20131115
 	<div class="picture-space">
 	</div>
 		<div class="picture_box" style="text-align: center">
-			<h5>당신의 추억을 업로드해주세요</h5>
-			<!-- <img src="{{ url_for('static', filename='image/upload.png') }}" width="50px" height="50px"> -->
-            <form>
-				<input type = "file" id = "fileupload" name = "fileupload" accept = "image/*" />
-			</form>
+      <h5>당신의 추억을 업로드해주세요</h5>
+			
 			<canvas id="canvas_color" class="colorFilter_canvas" ></canvas>
       <canvas id="canvas_gray" class="colorFilter_canvas" ></canvas>
 			<!-- <div id="scratch"></div> -->
 		</div>
+    <!-- <img src="{{ url_for('static', filename='image/upload.png') }}" width="50px" height="50px"> -->
+    <form>
+      <input type = "file" id = "fileupload" name = "fileupload" accept = "image/*" />
+    </form>
 	<div class="txt">
 		<h3>Txt 추가</h3>
 	</div>
@@ -120,74 +121,29 @@ Released   : 20131115
       <div style="width: auto; height: 30%"></div>
       <div class="semicircle"></div>
 
-      <div
-        class="select_box"
-        style="transform: rotate(90deg) translate(230px, -300px)"
-      >
-        <!-- <p>1</p> -->
-        <input
-          type="image"
-          name="style"
-          value="green"
-          class="select_box"
-          src="{{ url_for('static', filename='image/upload/s1.jpg') }}"
-        />
+      <!-- <p>1</p> -->
+      <div class="select_box" style="transform: rotate(135deg) translate(-650px, 0px)">
+        <input type="image" name="style" value="org" class="select_box" src="{{ url_for('static', filename='image/upload/s3.jpg') }}"/>
+      </div>
+      
+      <!--<p>2</p> -->
+      <div class="select_box" style="transform: rotate(120deg) translate(-600px, -50px)">
+        <input type="image" name="style" value="red" class="select_box" src="{{ url_for('static', filename='image/upload/s4.jpg') }}"/>
+      </div>
+      
+      <!--<p>3</p>-->
+      <div class="select_box" style="transform: rotate(90deg) translate(230px, -300px)">
+        <input type="image" name="style" value="green" class="select_box" src="{{ url_for('static', filename='image/upload/s1.jpg') }}"/>
+      </div>
+      
+      <!--<p>4</p>-->
+      <div class="select_box" style="transform: rotate(60deg) translate(380px, -200px)">
+        <input type="image" name="style" value="green" class="select_box" src="{{ url_for('static', filename='image/upload/s2.jpg') }}"/>
       </div>
 
-      <div
-        class="select_box"
-        style="transform: rotate(60deg) translate(380px, -200px)"
-      >
-        <!--<p>2</p> -->
-        <input
-          type="image"
-          name="style"
-          value="green"
-          class="select_box"
-          src="{{ url_for('static', filename='image/upload/s2.jpg') }}"
-        />
-      </div>
-
-      <div
-        class="select_box"
-        style="transform: rotate(135deg) translate(-650px, 0px)"
-      >
-        <!--<p>3</p>-->
-        <input
-          type="image"
-          name="style"
-          value="org"
-          class="select_box"
-          src="{{ url_for('static', filename='image/upload/s3.jpg') }}"
-        />
-      </div>
-
-      <div
-        class="select_box"
-        style="transform: rotate(120deg) translate(-600px, -50px)"
-      >
-        <!--<p>4</p>-->
-        <input
-          type="image"
-          name="style"
-          value="red"
-          class="select_box"
-          src="{{ url_for('static', filename='image/upload/s4.jpg') }}"
-        />
-      </div>
-
-      <div
-        class="select_box"
-        style="transform: rotate(30deg) translate(350px, -430px)"
-      >
-        <!--<p>5</p> -->
-        <input
-          type="image"
-          name="style"
-          value="blue"
-          class="select_box"
-          src="{{ url_for('static', filename='image/upload/s5.jpg') }}"
-        />
+      <!--<p>5</p> -->
+      <div class="select_box" style="transform: rotate(30deg) translate(350px, -430px)">
+        <input type="image" name="style" value="blue" class="select_box" src="{{ url_for('static', filename='image/upload/s5.jpg') }}"/>
       </div>
     </div>
 	

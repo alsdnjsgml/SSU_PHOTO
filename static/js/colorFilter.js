@@ -34,7 +34,7 @@ $('#fileupload').on('change', function (e) {
 });
 
 
-$('input[name=style]').on('click', function () {
+$('input[name=style]').click (function () {
 
     if (!isUpload) {
         alert('이미지를 업로드 해주세요!');
@@ -46,7 +46,7 @@ $('input[name=style]').on('click', function () {
     var grayPixels = grayCTX.getImageData(0,0, canvas_color.width, canvas_color.height);
 
     // image processing
-    var selectColor = $('input[name=style]').val()
+    var selectColor = $(this).attr('value');
     if (selectColor === 'org') {
     }
     else if (selectColor === 'red') {
