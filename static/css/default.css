@@ -975,17 +975,25 @@ ul.contact li a.icon-rss:before
 }
 
 .picture_box{
+	margin: 0; padding: 0;
 	height: 600px;
 	width: 400px;
 	border: 1px dashed;
+	float: left;
 	padding: 10px;
-	margin:0 auto
+	margin:0 30px;
+	position: relative;
 }
 
 .back {
 	position: absolute;
 	top: 0;
 	left: 0;
+}
+
+#result{
+	text-align: right;
+	/* position: relative; */
 }
 
 .front {
@@ -1041,6 +1049,19 @@ input.select_box:hover{
 	border: 0px; 
 	justify-content: center;
 	align-items: center;
+}
+
+.image_container{
+	text-align:center; 
+	display:none;
+}
+
+.txt {
+	text-align:center;
+	padding : 300px;
+	padding-top:4px;
+	position: relative;
+	z-index: 1;
 }
 
 .gallery {
