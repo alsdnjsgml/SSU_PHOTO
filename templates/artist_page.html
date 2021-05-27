@@ -110,15 +110,11 @@
           align-items: center;
         "
       >
-        <div class="frame">
-            <img onclick = "change2(this)" src= "{{ url_for('static', filename='image/photoframe.png') }}" width="100px" height="150px" id = "pic1">
-        </div>
+        <div class="frame"></div>
 
         <div class="frame_space"></div>
 
-        <div class="frame">
-            <img onclick = "change2(this)" src= "{{ url_for('static', filename='image/photoframe_1.png') }}" width="100px" height="150px" id = "pic2"> 
-        </div>
+        <div class="frame"></div>
 
         <div class="frame_space"></div>
 
@@ -130,9 +126,6 @@
           <div id="first" class="picture_box" style="text-align: center"> <!-- 텍스트 위치 센터로 지정-->
           <h5>당신의 추억을 업로드 해주세요.</h5> 
           <h5>(500x500 이하 size 권장)</h5>
-        <div class = "front"><img src = "{{ url_for('static', filename='image/s2.jpeg') }}" width = "550px" height = "350px">
-              </div>
-              <div class="back"><img src = "{{ url_for('static', filename='image/photoframe0.png') }}" height="400px" id = "bigPic"></div>
         <input type="file" 
                id="fileupload" 
                name="file1" 
