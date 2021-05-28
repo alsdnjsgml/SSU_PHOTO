@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os, sys
 import matplotlib.pyplot as plt
 import style_transfer
