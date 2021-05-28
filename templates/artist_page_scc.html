@@ -96,7 +96,8 @@ Released   : 20131115
 			<div class="front">{% if True %}<img src="{{ url_for('static', filename=target) }}" alt="Image" width="360px" height="470px">{% endif %}</div>
 			<div class="back"><img src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="400px" height="600px" id = "bigPic"></div>
 		   </div>
-	   <div class="txt">
+	   <div class="txt"> 한 마디 입력하기 😎 
+        <input id='name' onkeyup='printName()'/>
 		   {% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
 	   </div>
 	   <!-- <div class = "back"><img src = "{{ url_for('static', filename='image/photoframe_no.png')}}" width="600px" height="400px" id = "bigPic"></div> -->
