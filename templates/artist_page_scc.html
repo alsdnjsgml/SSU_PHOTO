@@ -99,15 +99,14 @@ Released   : 20131115
 			<div class="back"><img src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="400px" height="600px" id = "bigPic"></div>
 			<div id='result'></div>
 		   </div>
-	   <div class="txt"> 한 마디 입력하기 😎 
+	   <div class="txt"><h5> 한 마디 입력하기 😎 </h5>
         <input id='name' onkeyup='printName()'/>
 		   {% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
 	   </div>
 	   <!-- <div class = "back"><img src = "{{ url_for('static', filename='image/photoframe_no.png')}}" width="600px" height="400px" id = "bigPic"></div> -->
 	</div>
 
-	
-	입력한 값 : {% if True %}{{fw_text}}{% endif %}
+
 
 </div> 
 <form action="/artist"> <!-- 화풍 클릭시 초기 화면으로 돌아감 -->
