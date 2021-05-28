@@ -6,7 +6,8 @@
 }
 
 .colorFilter_canvas {
-    width: 100% ; height: 100%;
+    /* width: 400px; height: 600px; */
+    padding: 10px;
     top: 0px; left : 0px; 
     position: absolute;
     border : black 1px solid;
