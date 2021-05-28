@@ -123,22 +123,22 @@ Released   : 20131115
 
       <!-- <p>1</p> -->
       <div class="select_box" style="transform: rotate(90deg) translate(230px, -300px)">
-		<input type="image" name="style" value="green" class="select_box" src="{{ url_for('static', filename='image/upload/s1.jpg') }}"/>
-	  </div>
+        <input type="image" name="style" value="green" class="select_box" src="{{ url_for('static', filename='image/upload/s1.jpg') }}"/>
+      </div>
       
       <!--<p>2</p> -->
-	  <div class="select_box" style="transform: rotate(60deg) translate(380px, -200px)">
-		<input type="image" name="style" value="green" class="select_box" src="{{ url_for('static', filename='image/upload/s2.jpg') }}"/>
-	  </div>
-	
-	<!--<p>3</p>-->
-	  <div class="select_box" style="transform: rotate(135deg) translate(-650px, 0px)">
-		<input type="image" name="style" value="org" class="select_box" src="{{ url_for('static', filename='image/upload/s3.jpg') }}"/>
-	  </div>
-	
-	<!--<p>4</p>-->
-	  <div class="select_box" style="transform: rotate(120deg) translate(-600px, -50px)">
-		<input type="image" name="style" value="red" class="select_box" src="{{ url_for('static', filename='image/upload/s4.jpg') }}"/>
+      <div class="select_box" style="transform: rotate(60deg) translate(380px, -200px)">
+        <input type="image" name="style" value="green" class="select_box" src="{{ url_for('static', filename='image/upload/s2.jpg') }}"/>
+      </div>
+
+      <!--<p>3</p>-->
+      <div class="select_box" style="transform: rotate(135deg) translate(-650px, 0px)">
+        <input type="image" name="style" value="org" class="select_box" src="{{ url_for('static', filename='image/upload/s3.jpg') }}"/>
+      </div>
+      
+      <!--<p>4</p>-->
+      <div class="select_box" style="transform: rotate(120deg) translate(-600px, -50px)">
+        <input type="image" name="style" value="red" class="select_box" src="{{ url_for('static', filename='image/upload/s4.jpg') }}"/>
       </div>
 	
       <!--<p>5</p> -->
@@ -154,30 +154,14 @@ Released   : 20131115
 <div id="loading" style="display: none">
         <b>Please Wait, Loading…</b>
       <br />
-      <img src={{ url_for('static', filename='image/loading_horse.gif') }}
-      alt="" />
+      <img src={{ url_for('static', filename='image/loading_horse.gif') }} alt="" />
       <br />
-      <img src={{ url_for('static', filename='image/loading_wave.gif') }} alt=""
-      />
+      <img src={{ url_for('static', filename='image/loading_wave.gif') }} alt=""/>
 </div>
 	
 <!-- 필터 js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="{{ url_for('static', filename='js/colorFilter.js') }}"></script>
-
-<!-- 스크래치 js -->
-<script
-        src="https://code.jquery.com/jquery-2.2.4.js"
-        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-        crossorigin="anonymous"></script>
-        <script src="{{ url_for('static', filename='js/wScratchPad.min.js') }}"></script>
-        <script type="text/javascript">
-            $('#scratch').wScratchPad({
-                size        : 30,          // The size of the brush/scratch.
-                bg          : "{{ url_for('static', filename='image/example_org.jpeg') }}",  // Background (image path or hex color).
-                fg          : "{{ url_for('static', filename='image/example_gray.jpeg') }}"  // Foreground (image path or hex color).
-            });
-        </script>
 	
 </body>
 </html>
