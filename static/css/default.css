@@ -998,7 +998,7 @@ ul.contact li a.icon-rss:before
 
 .front {
 	position: absolute;
-	top: 0;
+	top: 20px;
 	left: 20px;
 }
 
