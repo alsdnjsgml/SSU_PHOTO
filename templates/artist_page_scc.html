@@ -37,9 +37,13 @@ Released   : 20131115
 				document.getElementById("bigPic").src = s.src;
 			}
 				  //텍스트 출력용
-			function printName()  {
+			function printName()  
 				const name = document.getElementById('name').value;
 				document.getElementById("result").innerText = name;
+			}
+			function appear(){
+				var back = document.getElementsByClassName("back");
+				back.positon = "absoulte";
 			}
 		</script>
     
@@ -94,7 +98,7 @@ Released   : 20131115
 	<div class ="box">
 		<div class = "picture_box" style="text-align: center">
 			<div class="front">{% if True %}<img src="{{ url_for('static', filename=target) }}" alt="Image" width="360px" height="470px">{% endif %}</div>
-			<div class="back"><img src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="400px" height="600px" id = "bigPic"></div>
+			<div class="back"><img onclic="appear()" src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="400px" height="600px" id = "bigPic"></div>
 			<div id='result'></div>
 		   </div>
 	   <div class="txt"> 한 마디 입력하기 😎 
