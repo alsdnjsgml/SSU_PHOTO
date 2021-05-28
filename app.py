@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os, sys
 import matplotlib.pyplot as plt
 import style_transfer
@@ -71,7 +73,7 @@ def upload_file():
     return render_template('artist_page_scc.html', target='image/upload/' + a + 'target.png', fw_text=fw_text)
 							
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=80)
+    app.run(host="0.0.0.0", port=5000)
 
     # 참고 1) 파일 저장 위치 (FLASK 문법)
     #      ㄴ templates -html / static : image, css, js
