@@ -42,8 +42,10 @@ Released   : 20131115
 				document.getElementById("result").innerText = name;
 			}
 			function appear(){
-				var back = document.getElementsByClassName('back');
-				back.style.position = 'absoulte';
+				var back = document.getElementsByClassName('back');				
+				back[0].style.display = 'block';
+				var txt = document.getElementsByClassName('txt');
+				txt[0].style.display = 'block';
 			}
 		</script>
     

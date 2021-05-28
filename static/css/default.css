@@ -986,9 +986,10 @@ ul.contact li a.icon-rss:before
 }
 
 .back {
-	position: hidden;
+	position: absolute;
 	top: 0;
 	left: 0;
+	display:none;
 }
 
 #result{
@@ -1005,6 +1006,7 @@ ul.contact li a.icon-rss:before
 .txt{
 	height: 100px;
 	text-align: center;
+	display: none;
 }
 
 .selector{
