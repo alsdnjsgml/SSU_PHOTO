@@ -7,6 +7,7 @@ from flask import Flask, url_for, redirect, render_template, request
 import os
 import time
 import numpy as np
+from PIL import Image
 
 app = Flask(__name__)
 
