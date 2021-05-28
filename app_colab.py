@@ -43,10 +43,13 @@ def artist_scc():
 
 @app_colab.route("/scrath_out", methods=['POST'])
 def scrath_upload_file():
-       file = request.files['file']
-       filename = file.filename
-       file.save(os.path.join(STATIC_FOLDER+ '/'+'image/'+filename))
-
+       file_1 = request.files['file1']
+       file_2 = request.files['file2']
+       file_1_name = file_1.filename
+       file_2_name = file_2.filename
+       file_1.save(os.path.join(STATIC_FOLDER+ '/'+'image/'+file_1_name))
+       file_2.save(os.path.join(STATIC_FOLDER+ '/'+'image/'+file_2_name))
+	
        return render_template('scrath_page_scc.html')
    
 	
