@@ -13,6 +13,9 @@ function drawImageData(image) {
     image.height = (canvas_color.width / image.width) * image.height ;
     image.width = canvas_color.width;
 
+    canvas_color.height = image.height;
+    canvas_gray.height = image.height;
+
     colorCTX.drawImage(image, 0, 0, image.width, image.height);
     grayCTX.drawImage(image, 0, 0, image.width, image.height);
 }

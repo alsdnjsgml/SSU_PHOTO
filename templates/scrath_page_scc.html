@@ -20,6 +20,7 @@ Released   : 20131115
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link href="{{ url_for('static', filename='css/default.css') }}" rel="stylesheet"  media="all" />
 <link href="{{ url_for('static', filename='css/fonts.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ url_for('static', filename='css/scratch.css') }}" rel="stylesheet" type="text/css" media="all" />
 
     <style>
         #picture_box > img {
@@ -37,13 +38,9 @@ Released   : 20131115
 				document.getElementById("bigPic").src = s.src;
 			}
 				  //텍스트 출력용
-			function printName()  
+			function printName()  {
 				const name = document.getElementById('name').value;
 				document.getElementById("result").innerText = name;
-			}
-			function appear(){
-				var back = document.getElementsByClassName("back");
-				back.positon = "absoulte";
 			}
 		</script>
     
@@ -52,20 +49,21 @@ Released   : 20131115
 </head>
 <body>
 <div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<h1><a href="#">SSU photo studio</a></h1>
-		</div>
-		<div id="menu">
-			<ul>                
+    <div id="header" class="container">
+        <div id="logo">
+            <h1><a href="#">SSU photo studio</a></h1>
+        </div>
+        <div id="menu">
+            <ul>
                 <li><a href=/ accesskey="1" title="">Homepage</a></li>
-				<li><a href=/about accesskey="2" title="">About</a></li>
-				<li><a href=/scrath accesskey="3" title="">Scrath </a></li>
-				<li class="current_page_item"><a href=/artist accesskey="4" title="">painting style</a></li>
-				<li><a href=/gallery accesskey="5" title="">Gallery</a></li>
-			</ul>
-		</div>
-	</div>
+                <li><a href=/about accesskey="2" title="">About</a></li>
+                <li class="current_page_item"><a href=/scrath accesskey="3" title="">Scrath </a></li>
+                <li><a href=/artist accesskey="4" title="">painting style</a></li>
+                <li><a href=/gallery accesskey="5" title="">Gallery</a></li>
+
+            </ul>
+        </div>
+    </div>
 </div>
 
 <!-- <div id="banner-wrapper">
@@ -80,7 +78,7 @@ Released   : 20131115
 	border: 0px; 
 	justify-content: center;
 	align-items: center;" >
-<div class="frame" style="border: 0.5px solid black">
+<div class="frame" style ="border: 0.5px solid black">
 	<h6>액자 없음</h6>
 	<img onclick = "change2(this)" src= "{{ url_for('static', filename='image/photoframe_no.png') }}" width="100px" height="150px" id = "pic1">
 </div> 
@@ -92,55 +90,71 @@ Released   : 20131115
 <div class="frame">
 	<img onclick = "change2(this)" src= "{{ url_for('static', filename='image/photoframe_1.png') }}" width="100px" height="150px" id = "pic3">
 	</div>
-  </div>
+  </div>``
 	<div class="picture-space">
 	</div>
 	<div class ="box">
 		<div class = "picture_box" style="text-align: center">
-			<div class="front">{% if True %}<img src="{{ url_for('static', filename=target) }}" alt="Image" width="360px" height="470px">{% endif %}</div>
-			<div class="back"><img onclic="appear()" src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="400px" height="600px" id = "bigPic"></div>
+            <div id="scratch"></div>
+			<!-- <div class="back"><img src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="400px" height="600px" id = "bigPic"></div> -->
 			<div id='result'></div>
-		   </div>
-	   <div class="txt"> 한 마디 입력하기 😎 
+		</div>
+	   <!-- <div class="txt"> 
+           한 마디 입력하기 😎 
         <input id='name' onkeyup='printName()'/>
 		   {% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
-	   </div>
-	   <!-- <div class = "back"><img src = "{{ url_for('static', filename='image/photoframe_no.png')}}" width="600px" height="400px" id = "bigPic"></div> -->
+	   </div> -->
 	</div>
 
 	
-	입력한 값 : {% if True %}{{fw_text}}{% endif %}
 
 </div> 
-<form action="/artist"> <!-- 화풍 클릭시 초기 화면으로 돌아감 -->
+<!-- <form action="/artist"> 화풍 클릭시 초기 화면으로 돌아감 -->
 <div class = "selector"> 
 	<div style="width: auto; height: 30%;"></div>
 	<div class="semicircle"></div>
     
-	<div class="select_box" style="transform: rotate(90deg) translate(230px, -300px);"> <!-- <p>1</p> -->
-    <input type="image" value = "1" class = "select_box" src="{{ url_for('static', filename='image/upload/s1.jpg') }}" >
+    <!-- <p>1</p> -->
+    <div class="select_box" style="transform: rotate(90deg) translate(230px, -300px)">
+        <input type="image" name="style" value="green" class="select_box" src="{{ url_for('static', filename='image/upload/s1.jpg') }}"/>
+    </div>
+      
+    <!--<p>2</p> -->
+    <div class="select_box" style="transform: rotate(60deg) translate(380px, -200px)">
+        <input type="image" name="style" value="green" class="select_box" src="{{ url_for('static', filename='image/upload/s2.jpg') }}"/>
+    </div>
+
+    <!--<p>3</p>-->
+    <div class="select_box" style="transform: rotate(135deg) translate(-650px, 0px)">
+        <input type="image" name="style" value="org" class="select_box" src="{{ url_for('static', filename='image/upload/s3.jpg') }}"/>
     </div>
     
-	<div class="select_box" style="transform: rotate(60deg) translate(380px, -200px);"> <!--<p>2</p> -->
-    <input type="image" value = "2" class = "select_box" src="{{ url_for('static', filename='image/upload/s2.jpg') }}" >
+    <!--<p>4</p>-->
+    <div class="select_box" style="transform: rotate(120deg) translate(-600px, -50px)">
+        <input type="image" name="style" value="red" class="select_box" src="{{ url_for('static', filename='image/upload/s4.jpg') }}"/>
     </div>
-    
-	<div class="select_box" style="transform: rotate(135deg) translate(-650px, 0px);"> <!--<p>3</p>-->
-    <input type="image" value = "3" class = "select_box" src="{{ url_for('static', filename='image/upload/s3.jpg') }}" >
-    </div>
-    
-	<div class="select_box" style="transform: rotate(120deg) translate(-600px, -50px);"> <!--<p>4</p>-->
-    <input type="image" value = "4" class = "select_box" src="{{ url_for('static', filename='image/upload/s4.jpg') }}" >
-    </div>
-    
-	<div class="select_box" style="transform: rotate(30deg) translate(350px, -430px);"> <!--<p>5</p> -->
-    <input type="image" value = "5" class = "select_box" src="{{ url_for('static', filename='image/upload/s5.jpg') }}" >
+
+    <!--<p>5</p> -->
+    <div class="select_box" style="transform: rotate(30deg) translate(350px, -430px)">
+        <input type="image" name="style" value="blue" class="select_box" src="{{ url_for('static', filename='image/upload/s5.jpg') }}"/>
     </div>
 </div>
-</form>
+<!-- </form> -->
+
 <div id="copyright" class="container">
    <p>&copy; SSU 2021 WEBPROGRAMING. All rights reserved. | Develop by <a href="http://fotogrph.com/">TEAM4</a> | Design by <a href="http://templated.co" rel="nofollow">TEAM4</a>. </p>
 </div>
-        
+
+<!-- 스크래치 js -->
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/wScratchPad.min.js') }}"></script>
+<script type="text/javascript">
+    $('#scratch').wScratchPad({
+        size        : 30,          // The size of the brush/scratch.
+        bg          : "{{ url_for('static', filename='image/canvas_img_color.jpeg') }}",  // Background (image path or hex color).
+        fg          : "{{ url_for('static', filename='image/canvas_img_gray.jpeg') }}"  // Foreground (image path or hex color).
+    });
+</script>
+
 </body>
 </html>
