@@ -291,11 +291,11 @@
           formData.append("value", e.target.value);
         }
 
-	// 입력한 값 있으면 
-        let fw_text = document.getElementById("name").value;
-        if (fw_text != "") {
-          formData.append("fw_text", fw_text);
-        }
+	// // 입력한 값 있으면 
+  //       let fw_text = (document.getElementById("name") || {}).value;
+  //       if (fw_text != "") {
+  //         formData.append("fw_text", fw_text);
+  //       }
 	      
         $.ajax({
           type: "POST",
