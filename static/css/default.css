@@ -986,7 +986,7 @@ ul.contact li a.icon-rss:before
 }
 
 .back {
-	position: absolute;
+	position: hidden;
 	top: 0;
 	left: 0;
 }
