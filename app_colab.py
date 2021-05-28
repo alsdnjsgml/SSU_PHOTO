@@ -48,10 +48,10 @@ def scrath_upload_file():
        file_1_name = file_1.filename
        file_2_name = file_2.filename
        file_1.save(os.path.join(STATIC_FOLDER+ '/'+'image/'+file_1_name))
-       file_2.save(os.path.join(STATIC_FOLDER+ '/'+'image/'+file_2_name))
-       file_size = file_1.size
-       print(file_size)
-       return render_template('scrath_page_scc.html', file_width=file_size[0], file_width=file_size[1])
+       file_2.save(os.path.join(STATIC_FOLDER+ '/'+'image/'+file_2_name))       
+       file_width, file_height = Image.open(STATIC_FOLDER+ '/'+'image/'+file_1_name).size
+
+       return render_template('scrath_page_scc.html', file_width=file_width, file_height=file_height)
    
 	
 @app_colab.route("/success", methods=['POST'])
