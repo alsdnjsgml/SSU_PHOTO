@@ -20,6 +20,7 @@ Released   : 20131115
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link href="{{ url_for('static', filename='css/default.css') }}" rel="stylesheet"  media="all" />
 <link href="{{ url_for('static', filename='css/fonts.css') }}" rel="stylesheet" type="text/css" media="all" />
+<link href="{{ url_for('static', filename='css/scratch.css') }}" rel="stylesheet" type="text/css" media="all" />
 
     <style>
         #picture_box > img {
@@ -48,20 +49,21 @@ Released   : 20131115
 </head>
 <body>
 <div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<h1><a href="#">SSU photo studio</a></h1>
-		</div>
-		<div id="menu">
-			<ul>                
+    <div id="header" class="container">
+        <div id="logo">
+            <h1><a href="#">SSU photo studio</a></h1>
+        </div>
+        <div id="menu">
+            <ul>
                 <li><a href=/ accesskey="1" title="">Homepage</a></li>
-				<li><a href=/about accesskey="2" title="">About</a></li>
-				<li><a href=/scrath accesskey="3" title="">Scrath </a></li>
-				<li class="current_page_item"><a href=/artist accesskey="4" title="">painting style</a></li>
-				<li><a href=/gallery accesskey="5" title="">Gallery</a></li>
-			</ul>
-		</div>
-	</div>
+                <li><a href=/about accesskey="2" title="">About</a></li>
+                <li class="current_page_item"><a href=/scrath accesskey="3" title="">Scrath </a></li>
+                <li><a href=/artist accesskey="4" title="">painting style</a></li>
+                <li><a href=/gallery accesskey="5" title="">Gallery</a></li>
+
+            </ul>
+        </div>
+    </div>
 </div>
 
 <!-- <div id="banner-wrapper">
@@ -93,7 +95,8 @@ Released   : 20131115
 	</div>
 	<div class ="box">
 		<div class = "picture_box" style="text-align: center">
-			<div class="front" width="360px" height="470px"></div>
+			<!-- <div class="front" id="scratch" width="360px" height="470px"></div> -->
+            <div class="front" id="scratch" width="360px" height="470px"></div>
 			<div class="back"><img src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="400px" height="600px" id = "bigPic"></div>
 			<div id='result'></div>
 		   </div>
@@ -144,18 +147,15 @@ Released   : 20131115
 </div>
 
 <!-- 스크래치 js -->
-<script
-        src="https://code.jquery.com/jquery-2.2.4.js"
-        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
-        crossorigin="anonymous"></script>
-        <script src="{{ url_for('static', filename='js/wScratchPad.min.js') }}"></script>
-        <script type="text/javascript">
-            $('.front').wScratchPad({
-                size        : 30,          // The size of the brush/scratch.
-                bg          : "{{ url_for('static', filename='image/canvas_img_color.jpeg') }}",  // Background (image path or hex color).
-                fg          : "{{ url_for('static', filename='image/canvas_img_gray.jpeg') }}"  // Foreground (image path or hex color).
-            });
-        </script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/wScratchPad.min.js') }}"></script>
+<script type="text/javascript">
+    $('#scratch').wScratchPad({
+        size        : 30,          // The size of the brush/scratch.
+        bg          : "{{ url_for('static', filename='image/canvas_img_color.jpeg') }}",  // Background (image path or hex color).
+        fg          : "{{ url_for('static', filename='image/canvas_img_gray.jpeg') }}"  // Foreground (image path or hex color).
+    });
+</script>
 
 </body>
 </html>
