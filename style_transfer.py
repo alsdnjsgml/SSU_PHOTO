@@ -108,6 +108,7 @@ def gram_matrix(tensor):
 
 def stylize(content,style,model):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(device)
     # load in content and style image
     content = content.to(device)
     # Resize style to match content, makes code easier
