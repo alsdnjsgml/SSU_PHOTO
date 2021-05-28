@@ -986,7 +986,7 @@ ul.contact li a.icon-rss:before
 }
 
 .back {
-	position: absolute;
+	position: relative;
 	top: 0;
 	left: 0;
 	display:none;
@@ -994,7 +994,10 @@ ul.contact li a.icon-rss:before
 
 #result{
 	text-align: right;
-	/* position: relative; */
+	position: absolute;
+	bottom: 50px;
+	font-size: medium;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 .front {
