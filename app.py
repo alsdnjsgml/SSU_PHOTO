@@ -11,7 +11,7 @@ from PIL import Image
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = './static/image/upload'
+UPLOAD_FOLDER = './SSU_PHOTO/static/image/upload'
 style =""
 
 @app.route("/")
