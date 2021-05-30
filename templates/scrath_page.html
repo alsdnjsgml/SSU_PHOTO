@@ -82,11 +82,7 @@ Released   : 20131115
 </div> -->
 <div class="picture">
 	<div class="picture-space"> </div>
-	<div class="picture-frame" style="width: 100%; display: flex;
-	flex-direction: row;
-	border: 0px; 
-	justify-content: center;
-	align-items: center;" >
+	<div class="picture-frame">
 		<div class="frame"></div> 
 		<div class="frame_space"></div>
 		<div class="frame"></div>
@@ -94,6 +90,9 @@ Released   : 20131115
 		<div class="frame"></div>
 	</div>
 	<div class="picture-space">
+    <form style="display: inline-block;">
+      <input type = "file" id = "fileupload" name = "fileupload" accept = "image/*" />
+    </form>
 	</div>
 		<div class="picture_box" style="text-align: center">
       <h5>당신의 추억을 업로드해주세요</h5>
@@ -103,9 +102,7 @@ Released   : 20131115
 			<!-- <div id="scratch"></div> -->
 		</div>
     <!-- <img src="{{ url_for('static', filename='image/upload.png') }}" width="50px" height="50px"> -->
-    <form style="text-align: center;">
-      <input type = "file" id = "fileupload" name = "fileupload" accept = "image/*" />
-    </form>
+
 	<div class="txt">
 		<h3>Txt 추가</h3>
 	</div>
