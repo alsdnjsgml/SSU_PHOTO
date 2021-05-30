@@ -1001,14 +1001,15 @@ ul.contact li a.icon-rss:before
 	text-align: right;
 	position: absolute;
 	bottom: 50px;
+	left: 160px;
 	font-size: medium;
 	font-family: 'Courier New', Courier, monospace;
 }
 
 .front {
 	position: absolute;
-	top: 20px;
-	left: 20px;
+	top: 35px;
+	left: 30px;
 }
 
 .txt{
