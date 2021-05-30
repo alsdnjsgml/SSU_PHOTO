@@ -48,6 +48,12 @@ Released   : 20131115
 				var txt = document.getElementsByClassName('txt');
 				txt[0].style.display = 'block';
 			}
+            function disappear(){
+                var back = document.getElementsByClassName('back');
+                back[0].style.display = 'none';
+                var txt = document.getElementsByClassName('txt');
+                txt[0].style.display = 'none';
+            }
 		</script>
     
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
@@ -82,7 +88,7 @@ Released   : 20131115
 	<div class="picture-frame">
 <div class="frame" style ="border: 0.2px solid black">
 	<h6 style="text-align: center;">액자 없음</h6>
-	<img onclick = "appear(); change2(this);" src= "{{ url_for('static', filename='image/photoframe_no.png') }}" width="100px" height="150px" id = "pic1">
+	<img onclick = "disapper(); change2(this);" src= "{{ url_for('static', filename='image/photoframe_no.png') }}" width="100px" height="150px" id = "pic1">
 </div> 
 <div class="frame_space"></div>
 <div class="frame">
