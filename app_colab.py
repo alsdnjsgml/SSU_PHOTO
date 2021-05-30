@@ -7,6 +7,7 @@ from flask_ngrok import run_with_ngrok
 import os
 import time
 import numpy as np
+from PIL import Image
 
 TEMPLATE_FOLDER = '/content/SSU_PHOTO/templates' # 임의의 경로
 STATIC_FOLDER = '/content/SSU_PHOTO/static' # 임의의 경로
