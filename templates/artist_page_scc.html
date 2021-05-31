@@ -95,8 +95,8 @@ Released   : 20131115
 		   </div>
 	   <div class="txt" style="display: block;"><h5> 코멘트 입력하기 😎 </h5>
         <input id='name' onkeyup='printName()'/>
-		   <a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>
-	   </div>{% endif %}
+		   {% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
+	   </div>
 	   <!-- <div class = "back"><img src = "{{ url_for('static', filename='image/photoframe_no.png')}}" width="600px" height="400px" id = "bigPic"></div> -->
 	</div>
 
