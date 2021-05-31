@@ -55,7 +55,6 @@ def scrath_upload_file():
 
 @app.route("/success", methods=['POST'])
 def upload_file():
-    fw_text = request.form.get('fw_text')
     a = str(np.random.randint(1, 100))
     content = request.files['imageFile0']
     style = request.form.get('value')
@@ -73,7 +72,7 @@ def upload_file():
     x = style_transfer.im_convert(target)
     plt.imsave(UPLOAD_FOLDER + '/' + a + 'target.png', x)
 
-    return render_template('artist_page_scc.html', target='image/upload/' + a + 'target.png', fw_text=fw_text)
+    return render_template('artist_page_scc.html', target='image/upload/' + a + 'target.png')
 							
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
