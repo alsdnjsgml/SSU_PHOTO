@@ -101,7 +101,7 @@ Released   : 20131115
 <div class="frame">
 	<img onclick = "appear(); change2(this);" src= "{{ url_for('static', filename='image/photoframe_1.png') }}" width="100px" height="150px" id = "pic3">
 	</div>
-  </div>``
+  </div>
 	<div class="picture-space">
 	</div>
 	<div class ="box">
@@ -160,7 +160,7 @@ Released   : 20131115
 <script src="{{ url_for('static', filename='js/wScratchPad.min.js') }}"></script>
 <script type="text/javascript">
     $('#scratch').wScratchPad({
-        size        : 30,          // The size of the brush/scratch.
+        size        : 20,          // The size of the brush/scratch.
         bg          : "{{ url_for('static', filename='image/canvas_img_color.jpeg') }}",  // Background (image path or hex color).
         fg          : "{{ url_for('static', filename='image/canvas_img_gray.jpeg') }}"  // Foreground (image path or hex color).
     });
