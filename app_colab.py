@@ -41,6 +41,10 @@ def gallery():
 def artist_scc():
   return render_template('artist_page_scc.html', target = 'image/upload/target.jpg')
 
+@app_colab.route('/scrath_page_scc')
+def scrath_scc():
+  return render_template('scrath_page_scc.html')
+
 @app_colab.route("/scrath_out", methods=['POST'])
 def scrath_upload_file():
        file_1 = request.files['file1']
