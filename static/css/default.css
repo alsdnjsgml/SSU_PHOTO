@@ -1003,6 +1003,7 @@ ul.contact li a.icon-rss:before
 	position: absolute;
 	top: 90%;
     left: 50%;
+	transform: translate(-50%, -50%);
 	font-size: medium;
 	font-family: 'Courier New', Courier, monospace;
 }
