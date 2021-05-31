@@ -113,7 +113,7 @@ Released   : 20131115
 	   <div class="txt"> 
        <h5>한 마디 입력하기 😎 </h5>
         <input id='name' onkeyup='printName()'/>
-		   <a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>
+		   <button type="button" onclick="downImg($('#scratch'))">save</button>
 	   </div>
 	</div>
 
@@ -166,5 +166,31 @@ Released   : 20131115
     });
 </script>
 
+<!-- 스크린샷 용 js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/html2canvas.min.js')}}"></script>
+<!-- IE10, 11 지원을 위한 es6-promise -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.js"></script>
+
+<script type="text/javascript">
+  //이미지(png)로 다운로드
+  function downImg(div){
+      $('#header')[0].scrollIntoView(false);
+      div = div[0]
+      html2canvas(div).then(function(canvas){
+          var myImage = canvas.toDataURL();
+          downloadURI(myImage, "Painting-Image.png") 
+      });
+  }
+
+  function downloadURI(uri, name){
+      var link = document.createElement("a")
+      link.download = name;
+      link.href = uri;
+      document.body.appendChild(link);
+      link.click();
+  }
+</script>	
+	
 </body>
 </html>
