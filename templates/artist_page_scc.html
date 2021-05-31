@@ -41,12 +41,6 @@ Released   : 20131115
 				const name = document.getElementById('name').value;
 				document.getElementById("result").innerText = name;
 			}
-			function appear(){
-				var back = document.getElementsByClassName('back');				
-				back[0].style.display = 'block';
-				var txt = document.getElementsByClassName('txt');
-				txt[0].style.display = 'block';
-			}
 		</script>
     
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
@@ -80,15 +74,15 @@ Released   : 20131115
 	<div class="picture-frame">
 <div class="frame" style="border: 0.2px solid black">
 	<h6 style="text-align: center;">액자 없음</h6>
-	<img onclick = "appear(); change2(this);" src= "{{ url_for('static', filename='image/photoframe_no.png') }}" width="100px" height="150px" id = "pic1">
+	<img onclick = "change2(this);" src= "{{ url_for('static', filename='image/photoframe_no.png') }}" width="100px" height="150px" id = "pic1">
 </div> 
 <div class="frame_space"></div>
 <div class="frame">
-	<img onclick = "appear(); change2(this);" src= "{{ url_for('static', filename='image/photoframe.png') }}" width="100px" height="150px" id = "pic2"> 
+	<img onclick = "change2(this);" src= "{{ url_for('static', filename='image/photoframe.png') }}" width="100px" height="150px" id = "pic2"> 
 </div>
 <div class="frame_space"></div>
 <div class="frame">
-	<img onclick = "appear(); change2(this);" src= "{{ url_for('static', filename='image/photoframe_1.png') }}" width="100px" height="150px" id = "pic3">
+	<img onclick = "change2(this);" src= "{{ url_for('static', filename='image/photoframe_1.png') }}" width="100px" height="150px" id = "pic3">
 	</div>
   </div>
 	<div class="picture-space">
@@ -96,10 +90,10 @@ Released   : 20131115
 	<div class ="box">
 		<div class = "picture_box" style="text-align: center">
 			<div class="front">{% if True %}<img src="{{ url_for('static', filename=target) }}" alt="Image" width="360px" height="470px">{% endif %}</div>
-			<div class="back"><img src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="400px" height="600px" id = "bigPic"></div>
+			<div class="back" style="display: block;"><img src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="400px" height="600px" id = "bigPic"></div>
 			<div id='result'></div>
 		   </div>
-	   <div class="txt"><h5> 코멘트 입력하기 😎 </h5>
+	   <div class="txt" style="display: block;"><h5> 코멘트 입력하기 😎 </h5>
         <input id='name' onkeyup='printName()'/>
 		   {% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
 	   </div>
