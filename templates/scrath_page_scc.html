@@ -105,7 +105,7 @@ Released   : 20131115
 	<div class="picture-space">
 	</div>
 	<div class ="box">
-		<div class = "picture_box" style="width: {{file_width}}px; height: {{file_height}}px;">
+		<div class = "picture_box" id="screenshot" style="width: {{file_width}}px; height: {{file_height}}px;">
             <div id="scratch"></div>
 			<div class="back"><img src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="100%" height="100%" id = "bigPic"></div>
 			<div id='result'></div>
@@ -113,7 +113,7 @@ Released   : 20131115
 	   <div class="txt"> 
        <h5>한 마디 입력하기 😎 </h5>
         <input id='name' onkeyup='printName()'/>
-		   <button type="button" onclick="downImg($('#scratch'))">save</button>
+		   <button type="button" onclick="downImg($('#screenshot'))">save</button>
 	   </div>
 	</div>
 
@@ -179,7 +179,7 @@ Released   : 20131115
       div = div[0]
       html2canvas(div).then(function(canvas){
           var myImage = canvas.toDataURL();
-          downloadURI(myImage, "Painting-Image.png") 
+          downloadURI(myImage, "Scratch-Image.png") 
       });
   }
 
