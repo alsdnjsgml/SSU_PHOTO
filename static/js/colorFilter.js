@@ -61,6 +61,9 @@ $('input[name=style]').click (function () {
     else if (selectColor === 'green') {
         greenFilter(colorPixels);
     }
+    else if (selectColor === 'purple') {
+        purpleFilter(colorPixels);
+    }
 
     grayscaleFilter(grayPixels);
 
@@ -195,6 +198,22 @@ function greenFilter(pixels) {
         if (b>g) {
             d[i+1] = b;
         }
+    }
+    return pixels;
+}
+
+
+function purpleFilter(pixels) {
+    var d = pixels.data;
+    for(var i=0; i<pixels.data.length; i+=4 ){
+        var r = d[i];
+        var g = d[i+1];
+        var b = d[i+2];
+
+        d[i] = r*0.9 + g*0.1 + b*0.1;
+        d[i+1] = r*0.2 + g*0.2 + b*0.2;
+        d[i+2] = r*0.1 + g*0.1 + b*0.9;
+
     }
     return pixels;
 }

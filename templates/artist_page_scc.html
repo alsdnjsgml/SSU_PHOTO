@@ -90,13 +90,20 @@ Released   : 20131115
 	<div class ="box">
 		<div class = "picture_box" style="text-align: center">
 			<div class="front">{% if True %}<img src="{{ url_for('static', filename=target) }}" alt="Image" width="360px" height="470px">{% endif %}</div>
+<<<<<<< HEAD
 			<div class="back" style="display: block;"><img src ="{{ url_for('static', filename='image/photoframe_no.png')}}" width="400px" height="600px" id = "bigPic"></div>
 			<div id='result'></div>
 		   </div>
 	   <div class="txt" style="display: block;"><h5> 코멘트 입력하기 😎 </h5>
+=======
+			<div class="back"><img src ="{{ url_for('static', filename='image/photoframe_no.png') }}" width="400px" height="600px" id = "bigPic"></div>
+			<div id='result'></div>
+		   </div>
+	   {% if True %}<div class="txt"><h5> 코멘트 입력하기 😎 </h5>
+>>>>>>> d6ce079ed5b9841570c9477ddd271723339855d4
         <input id='name' onkeyup='printName()'/>
-		   {% if True %}<a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>{% endif %}
-	   </div>
+		   <a href="{{ url_for('static', filename=target)}}" download><button>Save</button></a>
+	   </div>{% endif %}
 	   <!-- <div class = "back"><img src = "{{ url_for('static', filename='image/photoframe_no.png')}}" width="600px" height="400px" id = "bigPic"></div> -->
 	</div>
 
