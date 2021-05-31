@@ -33,8 +33,7 @@ def artist():
 
 @app.route('/artist_page_scc')
 def artist_scc():
-  fw_text = "입력한 text 문구"
-  return render_template('artist_page_scc.html', target = 'image/upload/target.jpg', fw_text=fw_text)
+  return render_template('artist_page_scc.html', target = 'image/upload/target.jpg')
 
 @app.route('/gallery')
 def gallery():
