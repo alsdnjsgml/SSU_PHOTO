@@ -978,7 +978,7 @@ ul.contact li a.icon-rss:before
 	margin: 0; padding: 0;
 	height: 600px;
 	width: 400px;
-	border: 1px dashed;
+	/* border: 1px dashed; */
 	float: left;
 	left: 160px;
 	position: relative;
@@ -1008,14 +1008,15 @@ ul.contact li a.icon-rss:before
 
 .front {
 	position: absolute;
-	top: 35px;
-	left: 30px;
+	top: 20px;
+	left: 25px;
 }
 
 .txt{
 	height: 100px;
 	text-align: center;
 	display: none;
+	float: left;
 }
 
 .selector{
